@@ -1,8 +1,10 @@
 package com.example.yzhang.allison;
 
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -53,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
         usernameDetails.addRule(RelativeLayout.ABOVE,redButton.getId());
         usernameDetails.addRule(RelativeLayout.CENTER_HORIZONTAL);
         usernameDetails.setMargins(0,0,0,50);
+
+        Resources r = getResources();
+        int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,200,
+                r.getDisplayMetrics());
+        userName.setWidth(px);
 
         // Add widget to layout (button is now a child of layout)
         buckysLayout.addView(redButton,buttonDetails);
